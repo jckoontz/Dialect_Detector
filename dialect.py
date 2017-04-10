@@ -79,10 +79,6 @@ print("probability to pick Argentina:", ArgP)
 print("probability to pick Mexico:",MexP)
 print("probability to pick Spain:",EspP)
 
-
-#for token in movie2_tokens:
-	#print token
-
 #Frequency profile from the token-list
 fpA = Counter(arg_tokens)
 #print("Frequency profile of Argentine Spanish:")
@@ -122,7 +118,7 @@ print("default Argentina probability:", defaultArg)
 print("default Mexico probability:", defaultMex)
 print("default Spain probability:", defaultEsp)
 
-#Unknoen text
+#Unknown text
 unknown = open('Volver.txt','rb').read().decode('utf-8')
 unknown_tokens = tokenizer.tokenize(unknown)
 for i in range(len(unknown_tokens)):
@@ -152,10 +148,6 @@ for token in tokens_unknown:
     result_Esp += log(fpE.get(token, defaultEsp), 2)
 result_Esp += log(EspP)
 print(result_Esp)
-#print(tokens_unknown) 
-#print(fpA)
-
-#
 
 if max(result_Mex, result_Esp, result_Arg) == result_Esp:
     print("text is from Spain")
@@ -163,29 +155,7 @@ elif max(result_Mex, result_Arg) == result_Mex:
     print("text is from Mexico")
 else: 
     print("text is from Argentina")
-#else:
-	#print("text is from Argentina")
-
-#elif max(result_Mex, result_Esp) == result_Esp:
- #    print("text is from Spain")
-#else: 
- #   print("text is from Mexico")
-
-#Argentina: Create model using the token, the token frequency, and the length of the token
-#model = [ (i, fp[i], len(i)) for i in fp ]
-#print(model)
-
-#Tab-delimited format of the model
-#for x in model:
-	#print "\t".join( (str(x[1]), str(x[2]), x[0]) ) 
- 
-
-
-#Create Meixco model using the token, the token frequency, and the length of the token                                             
-#modelM = [ (i, fp[i], len(i)) for i in fpM ]
-#print(modelM)
-
-#Meico Tab-delimited format of the model                                                                                  
+                                                                            
                                                                                                             
 
 
